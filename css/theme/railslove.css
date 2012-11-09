@@ -233,6 +233,11 @@ body {
 	text-align: left;
 }
 
+.reveal section.large {
+  position: relative;
+  top: -400px;
+}
+
 .reveal section img {
 	margin: 1em 0 0 0;
 }
@@ -240,6 +245,9 @@ body {
 .reveal p, .reveal ul li, .reveal ol li {
 	margin-bottom: 1em;
 	line-height: 1.3em;
+}
+.reveal ul li li {
+  margin-bottom: 0;
 }
 .reveal q {
 	font-style: normal;
@@ -281,6 +289,9 @@ body {
 .reveal pre {
 	margin: 1em 0;
 	font-style: normal;
+}
+.reveal pre.large {
+  font-size: 22px
 }
 
 .reveal code {

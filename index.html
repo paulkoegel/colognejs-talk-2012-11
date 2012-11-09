@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js Template for Railslove presentations</title>
+		<title>Solitaire mit Backbone</title>
 
 		<meta name="description" content="reveal.js Template for Railslove presentations">
 		<meta name="author" content="Tim Schneider">
@@ -38,66 +38,148 @@
 			<div class="slides">
 
 				<section data-state="green">
-					<h1>reveal.js Template<br>for Railslove presentations</h1>
-					<p>Railslove Prezbo<br />October 16th, 2012</p>
+					<h1>Solitaire mit Backbone</h1>
+					<p>Cologne.js<br>13. November 2012</p>
 					<p>
-						Tim Schneider<br/>
-						tim@railslove.com
+						Paul Wittmann<br>
+            paul@railslove.com
 					</p>
 				</section>
 
-				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
-					<p>
-						<i><small>- <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small></i>
-					</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you run the speaker notes server.
-					</aside>
+        <section>
+          <h2 class='bubble'><a style="color: white" href='http://localhost:4000' target='_blank'>Live demo</a></h2>
 				</section>
 
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#/2/1">down</a>.
-						</p>
-						<a href="#/2/1" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
+        <section>
+          <h2 class='bubble'>Komponenten</h2>
+          <ul>
+            <li>Ruby on Rails</li>
+            <li>CoffeeScript</li>
+            <li>Backbone.js
+              <ul>
+                <li>Backbone Marionette</li>
+                <li>Backbone Relational</li>
+                <li>HAML Coffee Templates</li>
+              </ul>
+            </li>
+            <li>HTML5 Drag &amp; Drop API</li>
+          </ul>
+        </section>
 
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview. Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
+        <section>
+          <h2>Datenmodell</h2>
+          <img src="images/datenmodell.png">
+        </section>
+
+        <section>
+          <h2>Backbone Relational</h2>
+          <pre class='large'><code>
+class IG.Models.Column extends Backbone.RelationalModel
+  relations: [
+    type: Backbone.HasMany
+    key: 'cards'
+    relatedModel: 'IG.Models.Card'
+    collectionType: 'IG.Collections.Cards'
+    reverseRelation:
+      key: 'column'
+      includeInJSON: '_id'
+  ]
+
+card = IG.columns.first().get('cards').first()
+  # =&gt; BB CardsCollection
+card.get('value') # =&gt; 1
+card.get('column') # =&gt; BB Column model instance
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Marionette Layout</h2>
+          <pre><code>
+&lt;!-- server-seitig --&gt;
+&lt;body&gt
+  &lt;div class='fork-me'&gt;&lt;/div&gt;
+  &lt;div id='l-game-container'&gt;&lt;/div&gt;
+&lt;/body&gt;
+          </code></pre>
+
+          <pre><code class='cs'>
+class IG.AppLayout extends Backbone.Marionette.Layout
+  template: 'layouts/application'
+  el: '#l-game-container'
+  regions:
+    navigation:  '#l-header-container--navigation-wrapper'
+    stack:   '#stack'
+    piles:   '#l-piles-container'
+    content: '#l-content-container'
+          </pre></code>
+        </section>
+
+        <section>
+          <section>
+          <h2>Marionette Views</h2>
+          <img src='images/datenmodell.png'>
+          </section>
+
+          <section>
+            <h2>Marionette Views</h2>
+            <pre><code>
+class IG.Views.ColumnsCollection extends Backbone.Marionette.CollectionView
+  id: 'columns-container'
+  template: 'columns/collection'
+  itemViewContainer: '.columns-wrapper'
+
+  initialize: -&gt;
+    @itemView = IG.Views.ColumnsShow
+
+
+class IG.Views.ColumnsShow extends Backbone.Marionette.Collection
+  tagName: 'ul'
+  className: 'm-column'
+  template: 'columns/show'
+
+  initialize: -&gt;
+    @itemView = IG.Views.CardsShow
+            </code></pre>
+          </section>
+        </section>
+        
+        <section>
+          <h2>Spiel speichern</h2>
+          <pre><code>
+data = "IG.stack.set(#{JSON.stringify(IG.stack)});
+        IG.columns.reset(#{JSON.stringify(IG.columns)});
+        IG.piles.reset(#{JSON.stringify(IG.piles)});"
+
+$('.octet-download')
+  .attr 'href', "data:text/octet-stream;base64,#{$.base64.encode(data)}"
+          </code></pre>
+          grässliche Dateinamen in Firefox =(
+        </section>
+
+        <section>
+          <h2>DOMNodeInserted Hack</h2>
+          <pre><code class='cs'>
+// http://davidwalsh.name/detect-node-insertion
+insertListener = (event) -&gt;
+  if event.animationName == 'nodeInserted'
+    $(event.target).removeClass 'off-the-board'
+
+document.addEventListener('animationstart', insertListener, false)
+          </code></pre>
+
+          <pre><code>
++keyframes(nodeInserted)
+  from
+    clip: rect(1px, auto, auto, auto)
+  to
+    clip: rect(0px, auto, auto, auto)
+
+.m-column
+  .m-card
+    // abusing CSS3 animations to catch event of newly inserted DOM elements
+    +animation-duration(0.001s)
+    +animation-name(nodeInserted)
+          </code></pre>
 				</section>
 
 				<section>
