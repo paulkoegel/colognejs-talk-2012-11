@@ -234,8 +234,7 @@ body {
 }
 
 .reveal section.large {
-  position: relative;
-  top: -400px;
+  margin-top: -80px;
 }
 
 .reveal section img {
@@ -291,12 +290,13 @@ body {
 	font-style: normal;
 }
 .reveal pre.large {
-  font-size: 22px
+  font-size: 21px
 }
 
 .reveal code {
 	font-family: 'Menlo', 'Monaco', monospace;
 	padding: 1em;
+  max-height: none
 }
 
 /*********************************************

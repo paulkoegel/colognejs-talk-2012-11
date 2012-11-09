@@ -20,7 +20,9 @@ Live Demo
 Komponenten
 -----------
 - Rails: liefert nur Bilder und App Code aus.
--  
+- Gründe für Backbone:
+  - besser dokumentiert als Ember, viele Plugins und Forenposts, Erfahrungsberichte
+  - Spielprojekt
 
 Backbone Relational
 -------------------
