@@ -18,8 +18,52 @@
  * GLOBAL STYLES
  *********************************************/
 
+@font-face {
+  font-family: 'VAGRoundedStd-Black';
+	src: url('vagroundedstd-black.eot');
+	src: url('vagroundedstd-black.eot?#iefix') format('embedded-opentype'),
+			 url('vagroundedstd-black.woff') format('woff'),
+			 url('vagroundedstd-black.ttf') format('truetype'),
+			 url('vagroundedstd-black.svg#vagroundedstd-black') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+  font-family: 'VAGRoundedStd-Bold';
+  src: url('/fonts/vag_rounded/vagroundedstd-bold.eot');
+  src: url('/fonts/vag_rounded/vagroundedstd-bold.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/vag_rounded/vagroundedstd-bold.woff') format('woff'),
+       url('/fonts/vag_rounded/vagroundedstd-bold.ttf') format('truetype'),
+       url('/fonts/vag_rounded/vagroundedstd-bold.svg#vagroundedstd-bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'VAGRoundedStd-Light';
+  src: url('/fonts/vag_rounded/vagroundedstd-light.eot');
+  src: url('/fonts/vag_rounded/vagroundedstd-light.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/vag_rounded/vagroundedstd-light.woff') format('woff'),
+       url('/fonts/vag_rounded/vagroundedstd-light.ttf') format('truetype'),
+       url('/fonts/vag_rounded/vagroundedstd-light.svg#vagroundedstd-light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+font-family: 'VAGRoundedStd-Thin';
+  src: url('vagroundedstd-thin.eot');
+  src: url('vagroundedstd-thin.eot?#iefix') format('embedded-opentype'),
+       url('vagroundedstd-thin.woff') format('woff'),
+       url('vagroundedstd-thin.ttf') format('truetype'),
+       url('vagroundedstd-thin.svg#vagroundedstd-thin') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
-	font-family: 'VAG Rounded W01 Light', sans-serif;
+	font-family: 'VAGRoundedStd-Light', sans-serif;
 	font-size: 30px;
 	color: #343434;
 }
@@ -159,7 +203,7 @@ body {
 .reveal h6 {
 	margin: 0 0 1em 0;
 	color: #18bd31;
-	font-family: 'VAG Rounded W01 Bold', sans-serif;
+	font-family: 'VAGRoundedStd-Bold', sans-serif;
 	line-height: 1em;
 	text-align: left;
 }

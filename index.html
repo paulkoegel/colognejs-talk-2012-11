@@ -12,7 +12,7 @@
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<script type="text/javascript" src="http://fast.fonts.com/jsapi/9ce4be12-da71-4eab-9c8f-e0a9ccfb7783.js"></script>
+    <!-- <script type="text/javascript" src="http://fast.fonts.com/jsapi/9ce4be12-da71-4eab-9c8f-e0a9ccfb7783.js"></script> -->
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/railslove.css" id="theme">
@@ -94,12 +94,12 @@
         </section>
 
         <section data-state='orange'>
-          <h2>Backbone Relational: Datenmodell</h2>
+          <h2>3. Backbone Relational: Datenmodell</h2>
           <img src="images/datenmodell.png">
         </section>
 
         <section class='large' data-state='orange'>
-          <h2>Backbone Relational</h2>
+          <h2>3. Backbone Relational</h2>
           <pre class='large'><code>
 class IG.Models.Column extends Backbone.RelationalModel
   relations: [
@@ -123,7 +123,7 @@ card.get('column') # =&gt; BB Column model instance
         </section>
 
         <section class='large' data-state='purple'>
-          <h2>Marionette Layout</h2>
+          <h2>4. Marionette Layout</h2>
           <!-- <pre class='large'><code>
 &lt;!-- server-seitig --&gt;
 &lt;body&gt
@@ -148,32 +148,38 @@ IG.appLayout.content.show
         </section>
 
         <section data-state='purple'>
-          <section>
-          <h2>Marionette Views</h2>
+          <h2>4. Marionette Views</h2>
           <img src='images/datenmodell.png'>
-          </section>
+        </section>
 
-          <section>
-            <h2>Marionette Views</h2>
-            <pre><code>
-class IG.Views.ColumnsCollection extends Backbone.Marionette.CollectionView
+        <section data-state='purple' class='large'>
+            <pre class= 'large'><code>
+class IG.Views.ColumnsCollection extends Backbone.
+  Marionette.CollectionView
   id: 'columns-container'
   template: 'columns/collection'
   itemViewContainer: '.columns-wrapper'
 
   initialize: -&gt;
     @itemView = IG.Views.ColumnsShow
+            </code></pre>
 
-
-class IG.Views.ColumnsShow extends Backbone.Marionette.Collection
+            <pre class='large'><code>
+class IG.Views.ColumnsShow extends Backbone.Marionette.
+  CollectionView
   tagName: 'ul'
   className: 'm-column'
   template: 'columns/show'
 
   initialize: -&gt;
     @itemView = IG.Views.CardsShow
+
             </code></pre>
-          </section>
+
+            <pre class='large'><code>
+class IG.Views.CardsShow extends Backbone.Marionette.
+  ItemView
+            </code></pre>
         </section>
         
         <section>
