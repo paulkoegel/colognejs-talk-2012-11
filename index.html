@@ -47,14 +47,33 @@
             <br>
             <img src='images/railslove.png'>
 					</p>
-				</section>
+        </section>
 
         <section>
-          <h2 class='bubble'><a style="color: white" href='http://localhost:4000' target='_blank'>Live demo</a></h2>
+          <h2 class='bubble'>Überblick</h2>
+          <ol>
+            <li>Live Demo</li>
+            <li>Architektur</li>
+            <li>Backbone Relational
+              <ul>
+                <li>Datenmodell</li>
+              </ul>
+            </li>
+            <li>Backbone Marionette
+              <ul>
+                <li>Layout Struktur</li>
+                <li>Collection Views</li>
+              </ul>
+          </ol>
+        </section>
+
+        <section>
+          <h2 class='bubble'><a style="color: white" href='http://localhost:4000' target='_blank'>1. Live Demo</a></h2>
           <img src='images/screenshot.jpg' style='margin:0 auto; display: block'>
-				</section>
+        </section>
 
-        <section>
+        
+        <!-- <section>
           <h2 class='bubble'>Komponenten</h2>
           <ul>
             <li>Ruby on Rails</li>
@@ -68,19 +87,18 @@
             </li>
             <li>HTML5 Drag &amp; Drop API</li>
           </ul>
-        </section>
+        </section> -->
 
-        <section class='large'>
-          <h2>Architektur</h2>
+        <section class='large' data-state='blue'>
           <img src='images/architektur.png' style='margin-top:0'>
         </section>
 
-        <section>
-          <h2>Datenmodell</h2>
+        <section data-state='orange'>
+          <h2>Backbone Relational: Datenmodell</h2>
           <img src="images/datenmodell.png">
         </section>
 
-        <section class='large'>
+        <section class='large' data-state='orange'>
           <h2>Backbone Relational</h2>
           <pre class='large'><code>
 class IG.Models.Column extends Backbone.RelationalModel
@@ -97,20 +115,22 @@ class IG.Models.Column extends Backbone.RelationalModel
           <pre class='large'><code>
 card = IG.columns.first().get('cards').first()
   # =&gt; BB CardsCollection
+  .first()
+    # =&gt; erste Karte der Collection
 card.get('value') # =&gt; 1
 card.get('column') # =&gt; BB Column model instance
           </code></pre>
         </section>
 
-        <section class='large'>
+        <section class='large' data-state='purple'>
           <h2>Marionette Layout</h2>
-          <pre class='large'><code>
+          <!-- <pre class='large'><code>
 &lt;!-- server-seitig --&gt;
 &lt;body&gt
   &lt;div class='fork-me'&gt;&lt;/div&gt;
   &lt;div id='l-game-container'&gt;&lt;/div&gt;
 &lt;/body&gt;
-          </code></pre>
+          </code></pre> -->
 
           <pre class='large'><code class='cs'>
 class IG.AppLayout extends Backbone.Marionette.Layout
@@ -118,13 +138,16 @@ class IG.AppLayout extends Backbone.Marionette.Layout
   el: '#l-game-container'
   regions:
     navigation:  '#l-header-container--navigation-wrapper'
-    stack:   '#stack'
-    piles:   '#l-piles-container'
     content: '#l-content-container'
+          </pre></code>
+
+          <pre class='large'><code>
+IG.appLayout.content.show
+  new IG.Views.ColumnsCollection(collection: IG.columns)
           </pre></code>
         </section>
 
-        <section>
+        <section data-state='purple'>
           <section>
           <h2>Marionette Views</h2>
           <img src='images/datenmodell.png'>
@@ -154,7 +177,7 @@ class IG.Views.ColumnsShow extends Backbone.Marionette.Collection
         </section>
         
         <section>
-          <h2>Spiel speichern</h2>
+          <h2 class='bubble'>Spiel speichern</h2>
           <pre><code>
 data = "IG.stack.set(#{JSON.stringify(IG.stack)});
         IG.columns.reset(#{JSON.stringify(IG.columns)});
@@ -167,7 +190,7 @@ $('.octet-download')
         </section>
 
         <section>
-          <h2>DOMNodeInserted Hack</h2>
+          <h2 class='bubble'>DOMNodeInserted Hack</h2>
           <pre><code class='cs'>
 // http://davidwalsh.name/detect-node-insertion
 insertListener = (event) -&gt;

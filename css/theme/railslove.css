@@ -142,8 +142,9 @@ body {
 .green 	.reveal p a,
 .purple .reveal p a,
 .orange .reveal p a,
-.blue 	.reveal p a {
-	color: white;
+.blue 	.reveal p a,
+.blue 	.reveal {
+	color: #eee;
 }
 
 /*********************************************
@@ -174,30 +175,43 @@ body {
  * BUBBLE HEADLINES
  *********************************************/
 
- .reveal h2.bubble {
+.reveal h2.bubble {
  	background-color: #18bd31;
  	color: white;
  	padding: 30px;
  	border-radius: 5px;
  	position: relative;
  	margin-bottom: 1em;
- }
-	 .reveal h2.bubble:after {
-	 	content: "";
-	 	display: inline-block;
-	 	width: 0;
-	 	height: 0;
-	 	border-left: 20px solid transparent;
-	 	border-right: 20px solid transparent;
-	 	border-top: 20px solid #18bd31;
-	 	position: absolute;
-	 	left: 30px;
-	 	bottom: -20px;
-	 }
+}
 
- .reveal h2.bubble ~ p {
- 	padding-left: 30px;
- }
+.reveal h2.bubble:after {
+  content: '';
+  display: inline-block;
+  width: 0;
+	height: 0;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 20px solid #18bd31;
+	position: absolute;
+	left: 30px;
+	bottom: -20px;
+}
+
+.reveal h2.bubble ~ p {
+  padding-left: 30px;
+}
+
+.blue .reveal h2.bubble {
+  background-color: #fff;
+  color: #139adf;
+}
+
+.blue .reveal h2.bubble:after {
+  border-top: 20px solid #fff;
+}
+
+
+
 
 /*********************************************
  * LINKS
@@ -295,8 +309,8 @@ body {
 
 .reveal code {
 	font-family: 'Menlo', 'Monaco', monospace;
-	padding: 1em;
-  max-height: none
+	padding: 0 1em;
+  max-height: none;
 }
 
 /*********************************************
