@@ -52,7 +52,7 @@
         <section>
           <h2 class='bubble'>Überblick</h2>
           <ol>
-            <li>Live Demo</li>
+            <li>Live Demo + Drag &amp; Drop</li>
             <li>Architektur</li>
             <li>Backbone Relational
               <ul>
@@ -73,21 +73,19 @@
         </section>
 
         
-        <!-- <section>
-          <h2 class='bubble'>Komponenten</h2>
+        <section>
+          <h2 class='bubble'>2. Architektur: Komponenten</h2>
           <ul>
             <li>Ruby on Rails</li>
             <li>CoffeeScript</li>
             <li>Backbone.js
               <ul>
-                <li>Backbone Marionette</li>
-                <li>Backbone Relational</li>
                 <li>HAML Coffee Templates</li>
               </ul>
             </li>
             <li>HTML5 Drag &amp; Drop API</li>
           </ul>
-        </section> -->
+        </section>
 
         <section class='large' data-state='blue'>
           <img src='images/architektur.png' style='margin-top:0'>
@@ -121,13 +119,13 @@ card.get('column') # =&gt; IG.columns.first()
 
         <section class='large' data-state='purple'>
           <h2>4. Marionette Layout</h2>
-          <!-- <pre class='large'><code>
+          <pre class='large'><code>
 &lt;!-- server-seitig --&gt;
 &lt;body&gt
   &lt;div class='fork-me'&gt;&lt;/div&gt;
   &lt;div id='l-game-container'&gt;&lt;/div&gt;
 &lt;/body&gt;
-          </code></pre> -->
+          </code></pre>
 
           <pre class='large'><code class='cs'>
 class IG.AppLayout extends Backbone.Marionette.Layout
@@ -146,7 +144,10 @@ IG.appLayout.content.show
 
         <section data-state='purple'>
           <h2>4. Marionette Views</h2>
-          <img src='images/datenmodell.png'>
+          <div>
+            <img src='images/screenshot_columns.png' style='float: left; margin-right: 30px'>
+            <img src='images/viewstruktur.png' width='650px'>
+          </div>
         </section>
 
         <section data-state='purple' class='large'>
@@ -154,22 +155,14 @@ IG.appLayout.content.show
 class IG.Views.ColumnsCollection extends Backbone.Marionette.
 CollectionView
 
-  id: 'columns-container'
-  template: 'columns/collection'
   itemViewContainer: '.columns-wrapper'
-
-  initialize: -&gt;
-    @itemView = IG.Views.ColumnsShow
+  itemView: IG.Views.ColumnsShow
             </code></pre>
 
             <pre class='large'><code>
 class IG.Views.ColumnsShow extends Backbone.Marionette.CollectionView
-  tagName: 'ul'
-  className: 'm-column'
-  template: 'columns/show'
 
-  initialize: -&gt;
-    @itemView = IG.Views.CardsShow
+  itemView: IG.Views.CardsShow
 
             </code></pre>
 
@@ -179,7 +172,7 @@ class IG.Views.CardsShow extends Backbone.Marionette.ItemView
         </section>
         
         <section>
-          <h2 class='bubble'>Spiel speichern</h2>
+          <h2 class='bubble'>Bonus Level: Spiel speichern</h2>
           <pre><code>
 data = "IG.stack.set(#{JSON.stringify(IG.stack)});
         IG.columns.reset(#{JSON.stringify(IG.columns)});
@@ -192,16 +185,8 @@ $('.octet-download')
         </section>
 
         <section>
-          <h2 class='bubble'>DOMNodeInserted Hack</h2>
-          <pre><code class='cs'>
-// http://davidwalsh.name/detect-node-insertion
-insertListener = (event) -&gt;
-  if event.animationName == 'nodeInserted'
-    $(event.target).removeClass 'off-the-board'
-
-document.addEventListener('animationstart', insertListener, false)
-          </code></pre>
-
+          <h2 class='bubble'>Bonus Level: DOMNodeInserted Hack</h2>
+          
           <pre><code>
 +keyframes(nodeInserted)
   from
@@ -214,6 +199,14 @@ document.addEventListener('animationstart', insertListener, false)
     // abusing CSS3 animations to catch event of newly inserted DOM elements
     +animation-duration(0.001s)
     +animation-name(nodeInserted)
+          </code></pre>
+          <pre><code class='cs'>
+// http://davidwalsh.name/detect-node-insertion
+insertListener = (event) -&gt;
+  if event.animationName == 'nodeInserted'
+    $(event.target).removeClass 'off-the-board'
+
+document.addEventListener('animationstart', insertListener, false)
           </code></pre>
 				</section>
 

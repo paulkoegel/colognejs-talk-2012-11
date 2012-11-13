@@ -4,6 +4,9 @@ Solitaire mit Backbone
 Vorstellen
 ----------
 
+Paul, Entwickler bei Railslove
+Feierabendprojekt, um Backbone, Marionette und BB Relational kennenzulernen
+
 Live Demo
 ---------
 - Rommé-Kartenset (104 Karten)
