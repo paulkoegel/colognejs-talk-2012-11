@@ -13,10 +13,10 @@ source: [https://github.com/paulwittmann/colognejs-talk-2012-11](https://github.
 
 Links aus Präsentation
 ----------------------
-* Irmingard: [http://irmingard.herokuapp.com](http://irmingard.herokuapp.com)
+* Irmingard: [http://irmingard.herokuapp.com](http://irmingard.herokuapp.com)<br>
   code: [https://github.com/paulwittmann/irmingard-backbone](https://github.com/paulwittmann/irmingard-backbone)
 
-* Simple Backbone Dummy App with Model-View syncing: [http://backbone-dummy.herokuapp.com](http://backbone-dummy.herokuapp.com)
+* Simple Backbone Dummy App with Model-View syncing: [http://backbone-dummy.herokuapp.com](http://backbone-dummy.herokuapp.com)<br>
   code: [https://github.com/paulwittmann/backbone-dummy](https://github.com/paulwittmann/backbone-dummy)
 
 * [HTML5 Drag and Drop tutorial](http://www.html5rocks.com/en/tutorials/dnd/basics)
