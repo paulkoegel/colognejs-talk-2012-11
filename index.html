@@ -69,7 +69,7 @@
 
         <section>
           <h2 class='bubble'><a style="color: white" href='http://localhost:4000' target='_blank'>1. Live Demo</a></h2>
-          <img src='images/screenshot.jpg' style='margin:0 auto; display: block'>
+          <!-- <img src='images/screenshot.jpg' style='margin:0 auto; display: block'> -->
         </section>
 
         
@@ -113,12 +113,9 @@ class IG.Models.Column extends Backbone.RelationalModel
   ]
           </code></pre>
           <pre class='large'><code>
-card = IG.columns.first().get('cards').first()
-  # =&gt; BB CardsCollection
-  .first()
-    # =&gt; erste Karte der Collection
-card.get('value') # =&gt; 1
-card.get('column') # =&gt; BB Column model instance
+card = IG.columns.first().get('cards').first())
+  # =&gt; erste Karte der Column
+card.get('column') # =&gt; IG.columns.first()
           </code></pre>
         </section>
 
@@ -154,8 +151,9 @@ IG.appLayout.content.show
 
         <section data-state='purple' class='large'>
             <pre class= 'large'><code>
-class IG.Views.ColumnsCollection extends Backbone.
-  Marionette.CollectionView
+class IG.Views.ColumnsCollection extends Backbone.Marionette.
+CollectionView
+
   id: 'columns-container'
   template: 'columns/collection'
   itemViewContainer: '.columns-wrapper'
@@ -165,8 +163,7 @@ class IG.Views.ColumnsCollection extends Backbone.
             </code></pre>
 
             <pre class='large'><code>
-class IG.Views.ColumnsShow extends Backbone.Marionette.
-  CollectionView
+class IG.Views.ColumnsShow extends Backbone.Marionette.CollectionView
   tagName: 'ul'
   className: 'm-column'
   template: 'columns/show'
@@ -177,8 +174,7 @@ class IG.Views.ColumnsShow extends Backbone.Marionette.
             </code></pre>
 
             <pre class='large'><code>
-class IG.Views.CardsShow extends Backbone.Marionette.
-  ItemView
+class IG.Views.CardsShow extends Backbone.Marionette.ItemView
             </code></pre>
         </section>
         

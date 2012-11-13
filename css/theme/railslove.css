@@ -346,6 +346,7 @@ body {
 .reveal pre {
 	margin: 1em 0;
 	font-style: normal;
+  width: 100%;
 }
 .reveal pre.large {
   font-size: 21px
@@ -364,10 +365,10 @@ body {
 .reveal .controls a {
 	color: #fff;
 }
-	.reveal .controls a.enabled {
-		color: #18bd31;
-		text-shadow: 0px 0px 2px hsla(185, 45%, 70%, 0.3);
-	}
+.reveal .controls a.enabled {
+  color: #18bd31;
+  text-shadow: 0px 0px 2px hsla(185, 45%, 70%, 0.3);
+}
 
 /*********************************************
  * PROGRESS BAR
@@ -376,36 +377,36 @@ body {
 .reveal .progress {
 	background: #c1c1c1;
 }
-	.reveal .progress span {
-		background: #18bd31;
+.reveal .progress span {
+  background: #18bd31;
 
-		-webkit-transition: width 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
-		   -moz-transition: width 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
-		    -ms-transition: width 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
-		     -o-transition: width 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
-		        transition: width 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
-	}
+  -webkit-transition: width 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
+     -moz-transition: width 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
+      -ms-transition: width 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
+       -o-transition: width 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
+          transition: width 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
+}
 
-	/*********************************************
-	 * CUBE TRANSITION
-	 *********************************************/
+/*********************************************
+ * CUBE TRANSITION
+ *********************************************/
 
-	.reveal.cube .slides section:not(.stack):before {
-		background: rgba(255,255,255,0.9);
-	}
+.reveal.cube .slides section:not(.stack):before {
+  background: rgba(255,255,255,0.9);
+}
 
-	.reveal.cube .slides section:not(.stack):after {
-		box-shadow: 0px 95px 25px rgba(0,0,0,0);
-	}
+.reveal.cube .slides section:not(.stack):after {
+  box-shadow: 0px 95px 25px rgba(0,0,0,0);
+}
 
-	/*********************************************
-	 * PAGE TRANSITION
-	 *********************************************/
+/*********************************************
+ * PAGE TRANSITION
+ *********************************************/
 
-	.reveal.page .slides section:not(.stack):before {
-		background: rgba(255,255,255,0.9);
-	}
+.reveal.page .slides section:not(.stack):before {
+  background: rgba(255,255,255,0.9);
+}
 
-	.reveal.page .slides section:not(.stack):after {
-		box-shadow: 0px 95px 25px rgba(0,0,0,0);
-	}
+.reveal.page .slides section:not(.stack):after {
+  box-shadow: 0px 95px 25px rgba(0,0,0,0);
+}

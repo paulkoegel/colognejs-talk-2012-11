@@ -6,7 +6,7 @@ Vorstellen
 
 Live Demo
 ---------
-- 2 Rommee-Kartensets
+- Rommé-Kartenset (104 Karten)
 - Stapel unsichtbar (Counter bei 'Hit me'-Button)
 - Drag &amp; Drop, nur offene Karten
 - alternierende Kartenfarbe (nicht suit), absteigende Werte
@@ -29,3 +29,20 @@ Backbone Relational
 
 - ColumnsCollection - Column: unidirektional
 - Column - Card: bidirektional
+
+DnD
+---
+
+API erklären,
+ghost modifizierbar?
+
+Ausblick
+--------
++ was kann relational noch?
++ speichern auf server
++ karten automatisch ablegen
+
+Erfahrungswerte
+---------------
++ nervigstes: aufsetzen vvon BB relational & genesteten marionette views
++ 70% setup, 30% spiellogik umsetzen
