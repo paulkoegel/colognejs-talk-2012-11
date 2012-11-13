@@ -7,7 +7,7 @@
 
 Slides
 ------
-[http://paulwittmann.github.com/colognejs-talk-2012-11/](http://paulwittmann.github.com/colognejs-talk-2012-11)
+[http://paulwittmann.github.com/colognejs-talk-2012-11/](http://paulwittmann.github.com/colognejs-talk-2012-11)<br>
 source: [https://github.com/paulwittmann/colognejs-talk-2012-11](https://github.com/paulwittmann/colognejs-talk-2012-11)
 
 
