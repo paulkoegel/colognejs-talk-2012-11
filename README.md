@@ -105,4 +105,4 @@ Nevertheless, Backbone's usually considered MV\* - it doesn't really follow the 
 
 Kudos
 -----
-+ an [Tim Schneider](http://railslove.com/team/tim_schneider) für das fantastische Reveal.js Railslove template
++ an [Tim Schneider](http://railslove.com/team/tim_schneider) für das fantastische [Reveal.js Railslove template](https://github.com/railslove/revealjs-template).
