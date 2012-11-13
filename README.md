@@ -1,238 +1,108 @@
-# reveal.js Template for Railslove presentations
+"Solitaire mit Backbone" - CologneJS, 13.11.2012 - Paul Wittmann
+================================================================
 
-This is a template and skeleton presentation you may use for Railslove style presentations with reveal.js.
+* [paul@railslove.com](mailto:paul@railslove.com)
+* [http://www.railslove.com/team/paul_wittmann](http://railslove.com/paul_wittmann)
+* [@wakkahari](http://twitter.com/wakkahari)
 
-___
+Slides
+------
+[http://paulwittmann.github.com/colognejs-talk-2012-11/](http://paulwittmann.github.com/colognejs-talk-2012-11)
+source: [https://github.com/paulwittmann/colognejs-talk-2012-11](https://github.com/paulwittmann/colognejs-talk-2012-11)
 
-## reveal.js?
 
-A framework for easily creating beautiful presentations using HTML. [Check out the live demo](http://lab.hakim.se/reveal-js/).
+Links aus Präsentation
+----------------------
+* Irmingard: [http://irmingard.herokuapp.com](http://irmingard.herokuapp.com)
+  code: [https://github.com/paulwittmann/irmingard-backbone](https://github.com/paulwittmann/irmingard-backbone)
 
-reveal.js comes with a broad range of features including [nested slides](https://github.com/hakimel/reveal.js#markup), [markdown contents](https://github.com/hakimel/reveal.js#markdown), [PDF export](https://github.com/hakimel/reveal.js#pdf-export), [speaker notes](https://github.com/hakimel/reveal.js#speaker-notes) and a [JavaScript API](https://github.com/hakimel/reveal.js#api). It's best viewed in a browser with support for CSS 3D transforms but [fallbacks](https://github.com/hakimel/reveal.js/wiki/Browser-Support) are available to make sure your presentation can still be viewed elsewhere.
+* Simple Backbone Dummy App with Model-View syncing: [http://backbone-dummy.herokuapp.com](http://backbone-dummy.herokuapp.com)
+  code: [https://github.com/paulwittmann/backbone-dummy](https://github.com/paulwittmann/backbone-dummy)
 
+* [HTML5 Drag and Drop tutorial](http://www.html5rocks.com/en/tutorials/dnd/basics)
+* [DOMNodeInserted Hack](http://davidwalsh.name/detect-node-insertion)
+* [RevealJS](http://lab.hakim.se/reveal-js)
 
-#### More reading in the Wiki:
-- [Changelog](https://github.com/hakimel/reveal.js/wiki/Changelog): Up-to-date version history.
-- [Examples](https://github.com/hakimel/reveal.js/wiki/Example-Presentations): Presentations created with reveal.js, add your own!
-- [Browser Support](https://github.com/hakimel/reveal.js/wiki/Browser-Support): Explanation of browser support and fallbacks.
+* BDD Javascript Testing: [Jasmine](http://pivotal.github.com/jasmine)
 
 
-## Instructions
+Pro & Contra für Backbone
+-------------------------
 
-### Markup
+### The Gist of it all
+1. Javascript MVC
+  - provides structure for your Javascript code - less jQuery spaghetti code
+  - cf. "Is it MVC, or what?" below
+2. View Synching
+  - update your views whenever your models' attributes change
+3. Data Synching (not at all implemented in Irmingard)
+  - offers painless synching of Backbone models to and from your server via Ajax and JSON
 
-Markup heirarchy needs to be ``<div class="reveal"> <div class="slides"> <section>`` where the ``<section>`` represents one slide and can be repeated indefinitely. If you place multiple ``<section>``'s inside of another ``<section>`` they will be shown as vertical slides. The first of the vertical slides is the "root" of the others (at the top), and it will be included in the horizontal sequence. For example:
+### Pros
++ active community &amp; widely used
++ mature (initial commit: Sep 30, 2010)
++ good documentation &amp; many great tutorials
++ lightweight (6kB, v0.9.2)
++ templating engine agnostic (HAMLc, underscore templates, handlebars, eco, jade etc.)
++ highly customizable (unlike many other JS MVC solutions)
 
-```html
-<div class="reveal">
-	<div class="slides">
-		<section>Single Horizontal Slide</section>
-		<section>
-			<section>Vertical Slide 1</section>
-			<section>Vertical Slide 2</section>
-		</section>
-	</div>
-</div>
-```
+### Cons
+- rather barebone, lacking esp. View functionality and conventions for larger JS apps (that's why there are so many libraries built on top of it, Backbone core is intentionally being kept minimal)
+- comparatively verbose to set up View behaviour
+- lacks automatic Model-View bindings
 
-### Markdown
 
-It's possible to write your slides using Markdown. To enable Markdown, add the ```data-markdown``` attribute to your ```<section>``` elements and wrap the contents in a ```<script type="text/template">``` like the example below.
+Backbone Erweiterungen
+----------------------
+* [Backbone Marionette](https://github.com/derickbailey/backbone.marionette)
+  Composite application architecture. Better view handling and unbinding. Alternative to 9elements' Chaplin but more mature.
+  + [Backbone Geppetto](https://github.com/ModelN/backbone.geppetto)
+    Setzt auf Marionette auf und fügt "scalable Controller architecture" hinzu.
 
-This is based on [data-markdown](https://gist.github.com/1343518) from [Paul Irish](https://github.com/paulirish) which in turn uses [showdown](https://github.com/coreyti/showdown/). This is sensitive to indentation (avoid mixing tabs and spaces) and line breaks (avoid consecutive breaks).
+* [Backbone Relational](github.com/PaulUithol/Backbone-relational)
+  Hierarchies of Backbone Models - 'has many'-relations etc.
 
-```html
-<section data-markdown>
-	<script type="text/template">
-		## Page title
+* [Backbone Model Binder](github.com/theironcook/Backbone.ModelBinder)
+  Provides Model-View bindings. Interesting to autosync from a view to a model via input fields etc. (plain Backbone only makes the other way around really easy).
 
-		A paragraph with some text and a [link](http://hakim.se).
-	</script>
-</section>
-```
+* [HAML Coffee Assets](github.com/netzpirat/haml_coffee_assets)
+  Backbone templates with HAML syntax. After '-' and '=' you'll be writing CoffeeScript instead of Ruby.
 
 
-### Configuration
+Resources
+---------
+* [www.backbonejs.org](http://www.backbonejs.org)
 
-At the end of your page you need to initialize reveal by running the following code. Note that all config values are optional and will default as specified below.
+* [Annotated source](http://backbonejs.org/docs/backbone.html)
 
-```javascript
-Reveal.initialize({
-	// Display controls in the bottom right corner
-	controls: true,
+* Osmani, Addy. _Developing Backbone.js Applications_ (work in progress). [https://github.com/addyosmani/backbone-fundamentals](https://github.com/addyosmani/backbone-fundamentals).
+  Probably the best single resource on Backbone so far.
 
-	// Display a presentation progress bar
-	progress: true,
+* 3-part Peepcode screencast series: [https://peepcode.com/products/backbone-js](https://peepcode.com/products/backbone-js)
+  Rather slow-going. You'll learn a lot more by playing around with your own project.
 
-	// Push each slide change to the browser history
-	history: false,
+* Overview of Javascript MVC frameworks
+  Osmani, Addy. 2012-07-27. "Journey Through The JavaScript MVC Jungle". [http://coding.smashingmagazine.com/2012/07/27/journey-through-the-javascript-mvc-jungle](http://coding.smashingmagazine.com/2012/07/27/journey-through-the-javascript-mvc-jungle)
 
-	// Enable keyboard shortcuts for navigation
-	keyboard: true,
+* Overview of Backbone Architecture Libraries
+  Schäfer, Mathias. 2012-05-10. "Application frameworks on top of Backbone.js. A birds-eye view of the similarities of Chaplin, Marionette and Thorax/Lumbar". [https://speakerdeck.com/u/molily/p/application-frameworks-on-top-of-backbonejs-talk-at-appsberlinjs](https://speakerdeck.com/u/molily/p/application-frameworks-on-top-of-backbonejs-talk-at-appsberlinjs)
+  Mathias is one of the main programmers of moviepilot.com, one of the largest Backbone apps out there. He's also the maintainer of [Chaplin](https://github.com/chaplinjs/chaplin), a not yet production-ready alternative to Marionette.
 
-	// Enable the slide overview mode
-	overview: true,
 
-	// Loop the presentation
-	loop: false,
+Is it MVC, or what?
+-------------------
+In some regards, Backbone comes a lot closer to the original MVC architecture than, e.g., Rails.
+MVC was designed by Trygve Reenskaug in 1979 while working on Smalltalk-80:
+  - called it "Model-View-Controller-Editor"
+  - View-Controller pair required for each element on the screen; no true separation
+  - Controller’s role: handling user input
+  - observer pattern: Views and Controllers subscribe to Models
+  - the View is automatically updated whenever the Model changes
+(for all of this cf. Addy Osmani's _Developing Backbone.js Applications_ above)
 
-	// Number of milliseconds between automatically proceeding to the
-	// next slide, disabled when set to 0, this value can be overwritten
-	// by using a data-autoslide attribute on your slides
-	autoSlide: 0,
+Nevertheless, Backbone's usually considered MV\* - it doesn't really follow the MVC pattern but has some important MVP features as well. Cf. [Backbone.js Is Not An MVC Framework](http://lostechies.com/derickbailey/2011/12/23/backbone-js-is-not-an-mvc-framework).
 
-	// Enable slide navigation via mouse wheel
-	mouseWheel: true,
 
-	// Apply a 3D roll to links on hover
-	rollingLinks: true,
-
-	// Transition style
-	transition: 'default' // default/cube/page/concave/zoom/linear/none
-});
-```
-
-### Dependencies
-
-Reveal.js doesn't _rely_ on any third party scripts to work but a few optional libraries are included by default. These libraries are loaded as dependencies in the order they appear, for example:
-
-```javascript
-Reveal.initialize({
-	dependencies: [
-		// Syntax highlight for <code> elements
-		{ src: 'lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
-		// Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
-		{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } }
-		// Interpret Markdown in <section> elements
-		{ src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-		{ src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-		// Zoom in and out with Alt+click
-		{ src: 'plugin/zoom-js/zoom.js', condition: function() { return !!document.body.classList; } },
-		// Speaker notes support
-		{ src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
-		{ src: '/socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
-	]
-});
-```
-
-You can add your own extensions using the same syntax. The following properties are available for each dependency object:
-- **src**: Path to the script to load
-- **async**: [optional] Flags if the script should load after reveal.js has started, defaults to false
-- **callback**: [optional] Function to execute when the script has loaded
-- **condition**: [optional] Function which must return true for the script to be loaded
-
-
-### API
-
-The Reveal class provides a minimal JavaScript API for controlling navigation and reading state:
-
-```javascript
-// Navigation
-Reveal.slide( indexh, indexv );
-Reveal.left();
-Reveal.right();
-Reveal.up();
-Reveal.down();
-Reveal.prev();
-Reveal.next();
-Reveal.toggleOverview();
-
-// Retrieves the previous and current slide elements
-Reveal.getPreviousSlide();
-Reveal.getCurrentSlide();
-
-Reveal.getIndices(); // { h: 0, v: 0 } }
-```
-
-### States
-
-If you set ``data-state="somestate"`` on a slide ``<section>``, "somestate" will be applied as a class on the document element when that slide is opened. This allows you to apply broad style changes to the page based on the active slide.
-
-Furthermore you can also listen to these changes in state via JavaScript:
-
-```javascript
-Reveal.addEventListener( 'somestate', function() {
-	// TODO: Sprinkle magic
-}, false );
-```
-
-### Slide change event
-
-An 'slidechanged' event is fired each time the slide is changed (regardless of state). The event object holds the index values of the current slide as well as a reference to the previous and current slide HTML nodes.
-
-```javascript
-Reveal.addEventListener( 'slidechanged', function( event ) {
-	// event.previousSlide, event.currentSlide, event.indexh, event.indexv
-} );
-```
-
-### Fragment events
-
-When a slide fragment is either shown or hidden reveal.js will dispatch an event.
-
-```javascript
-Reveal.addEventListener( 'fragmentshown', function( event ) {
-	// event.fragment = the fragment DOM element
-} );
-Reveal.addEventListener( 'fragmenthidden', function( event ) {
-	// event.fragment = the fragment DOM element
-} );
-```
-
-### Internal links
-
-It's easy to link between slides. The first example below targets the index of another slide whereas the second targets a slide with an ID attribute (```<section id="some-slide">```):
-
-```html
-<a href="#/2/2">Link</a>
-<a href="#/some-slide">Link</a>
-```
-
-## PDF Export
-
-Presentations can be exported to PDF via a special print stylesheet. This feature requires that you use [Google Chrome](http://google.com/chrome).
-Here's an example of an exported presentation that's been uploaded to SlideShare: http://www.slideshare.net/hakimel/revealjs-13872948.
-
-1. Open your presentation with [css/print/pdf.css](https://github.com/hakimel/reveal.js/blob/master/css/print/pdf.css) included on the page. The default index HTML lets you add *print-pdf* anywhere in the query to include the stylesheet, for example: [lab.hakim.se/reveal-js?print-pdf](http://lab.hakim.se/reveal-js?print-pdf).
-2. Open the in-browser print dialog (CMD+P).
-3. Change the **Destination** setting to **Save as PDF**.
-4. Change the **Layout** to **Landscape**.
-5. Change the **Margins** to **None**.
-6. Click **Save**.
-
-![Chrome Print Settings](https://s3.amazonaws.com/hakim-static/reveal-js/pdf-print-settings.png)
-
-## Speaker Notes
-
-If you're interested in using speaker notes, reveal.js comes with a Node server that allows you to deliver your presentation in one browser while viewing speaker notes in another.
-
-To include speaker notes in your presentation, simply add an `<aside class="notes">` element to any slide. These notes will be hidden in the main presentation view.
-
-It's also possible to write your notes with Markdown. To enable Markdown, add the ```data-markdown``` attribute to your note ```<aside>``` elements.
-
-You'll also need to [install Node.js](http://nodejs.org/); then, install the server dependencies by running `npm install`.
-
-Once Node.js and the dependencies are installed, run the following command from the root directory:
-
-		node plugin/speakernotes
-
-By default, the slides will be served at [localhost:1947](http://localhost:1947).
-
-You can change the appearance of the speaker notes by editing the file at `plugin/speakernotes/notes.html`.
-
-### Known Issues
-
-- The notes page is supposed to show the current slide and the next slide, but when it first starts, it always shows the first slide in both positions.
-
-## Folder Structure
-- **css/** Core styles without which the project does not function
-- **js/** Like above but for JavaScript
-- **plugin/** Components that have been developed as extensions to reveal.js
-- **lib/** All other third party assets (JavaScript, CSS, fonts)
-
-## License
-
-MIT licensed
-
-Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
-
+Kudos
+-----
++ an [Tim Schneider](http://railslove.com/team/tim_schneider) für das fantastische Reveal.js Railslove template
