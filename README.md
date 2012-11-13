@@ -57,7 +57,7 @@ Backbone Erweiterungen
 * [Backbone Marionette](https://github.com/derickbailey/backbone.marionette)
   Composite application architecture. Better view handling and unbinding. Alternative to 9elements' Chaplin but more mature.
   + [Backbone Geppetto](https://github.com/ModelN/backbone.geppetto)
-    Setzt auf Marionette auf und fügt "scalable Controller architecture" hinzu.<br>
+    Setzt auf Marionette auf und fügt "scalable Controller architecture" hinzu.<br><br>
 
 * [Backbone Relational](github.com/PaulUithol/Backbone-relational)
   Hierarchies of Backbone Models - 'has many'-relations etc.
