@@ -20,8 +20,8 @@ Links aus Präsentation
   code: [https://github.com/paulwittmann/backbone-dummy](https://github.com/paulwittmann/backbone-dummy)
 
 * [HTML5 Drag and Drop tutorial](http://www.html5rocks.com/en/tutorials/dnd/basics)
-* [DOMNodeInserted Hack](http://davidwalsh.name/detect-node-insertion)
-  example: [in use to detect DOM changes in Gmail](http://blog.streak.com/2012/11/how-to-detect-dom-changes-in-css.html)
+* [DOMNodeInserted Hack](http://davidwalsh.name/detect-node-insertion)<br>
+  [in use to detect DOM changes in Gmail](http://blog.streak.com/2012/11/how-to-detect-dom-changes-in-css.html)
 
 * [RevealJS](http://lab.hakim.se/reveal-js)
 
