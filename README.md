@@ -21,7 +21,7 @@ Links aus Präsentation
 
 * [HTML5 Drag and Drop tutorial](http://www.html5rocks.com/en/tutorials/dnd/basics)
 * [DOMNodeInserted Hack](http://davidwalsh.name/detect-node-insertion)
-  [in use to detect DOM changes in Gmail](http://blog.streak.com/2012/11/how-to-detect-dom-changes-in-css.html)
+  example: [in use to detect DOM changes in Gmail](http://blog.streak.com/2012/11/how-to-detect-dom-changes-in-css.html)
 
 * [RevealJS](http://lab.hakim.se/reveal-js)
 
