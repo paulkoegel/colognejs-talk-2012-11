@@ -80,6 +80,8 @@ Resources
 * Osmani, Addy. _Developing Backbone.js Applications_ (work in progress). [https://github.com/addyosmani/backbone-fundamentals](https://github.com/addyosmani/backbone-fundamentals).
   Probably the best single resource on Backbone so far.
 
+* [Backbone Marionette Screencast](https://tutsplus.com/lesson/backbone-marionette) - 10min
+
 * 3-part Peepcode screencast series: [https://peepcode.com/products/backbone-js](https://peepcode.com/products/backbone-js)
   Rather slow-going. You'll learn a lot more by playing around with your own project.
 
