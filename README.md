@@ -1,5 +1,5 @@
-"Solitaire mit Backbone" - CologneJS, 13.11.2012 - Paul Wittmann
-================================================================
+Solitaire in Backbone - CologneJS, 13.11.2012 - Paul Wittmann
+=============================================================
 
 * [paul@railslove.com](mailto:paul@railslove.com)
 * [http://www.railslove.com/team/paul_wittmann](http://railslove.com/paul_wittmann)
@@ -11,8 +11,8 @@ Slides
 source: [https://github.com/paulwittmann/colognejs-talk-2012-11](https://github.com/paulwittmann/colognejs-talk-2012-11)
 
 
-Links aus Präsentation
-----------------------
+Links from the Slides
+---------------------
 * Irmingard: [http://irmingard.herokuapp.com](http://irmingard.herokuapp.com)<br>
   code: [https://github.com/paulwittmann/irmingard-backbone](https://github.com/paulwittmann/irmingard-backbone)
 
@@ -28,8 +28,8 @@ Links aus Präsentation
 * BDD Javascript Testing: [Jasmine](http://pivotal.github.com/jasmine)
 
 
-Pro & Contra für Backbone
--------------------------
+Backbone Pros & Cons
+--------------------
 
 ### The Gist of it all
 1. Javascript MVC
@@ -54,12 +54,12 @@ Pro & Contra für Backbone
 - lacks automatic Model-View bindings
 
 
-Backbone Erweiterungen
-----------------------
+Backbone Extensions
+-------------------
 * [Backbone Marionette](https://github.com/derickbailey/backbone.marionette)
   Composite application architecture. Better view handling and unbinding. Alternative to 9elements' Chaplin but more mature.
   + [Backbone Geppetto](https://github.com/ModelN/backbone.geppetto)
-    Setzt auf Marionette auf und fügt "scalable Controller architecture" hinzu.<br><br>
+    Extends Marionette adding a "scalable Controller architecture"<br><br>
 
 * [Backbone Relational](github.com/PaulUithol/Backbone-relational)
   Hierarchies of Backbone Models - 'has many'-relations etc.
@@ -109,9 +109,4 @@ Nevertheless, Backbone's usually considered MV\* - it doesn't really follow the 
 
 Kudos
 -----
-+ an [Tim Schneider](http://railslove.com/team/tim_schneider) für das fantastische [Reveal.js Railslove template](https://github.com/railslove/revealjs-template).
-
-
-Errata
-------
-Es ist eigentlich eher sorum, dass meine Schwester für mich die schweren Savegames knackt ;)
++ to [Tim Schneider](http://railslove.com/team/tim_schneider) for the fantastic [Reveal.js Railslove template](https://github.com/railslove/revealjs-template).
