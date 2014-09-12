@@ -110,3 +110,7 @@ Nevertheless, Backbone's usually considered MV\* - it doesn't really follow the 
 Kudos
 -----
 + to [Tim Schneider](http://railslove.com/team/tim_schneider) for the fantastic [Reveal.js Railslove template](https://github.com/railslove/revealjs-template).
+
+Errata
+------
+Contrary to what I said in the talk, it's usually my sister who solves my really tough save games - not the other way around :)
