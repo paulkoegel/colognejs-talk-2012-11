@@ -25,7 +25,7 @@ Links from the Slides
 
 * [RevealJS](http://lab.hakim.se/reveal-js)
 
-* BDD Javascript Testing: [Jasmine](http://pivotal.github.com/jasmine)
+* BDD Javascript Testing: [Jasmine](https://jasmine.github.io/)
 
 
 Backbone Pros & Cons
