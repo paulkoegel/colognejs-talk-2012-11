@@ -1,23 +1,21 @@
-Solitaire in Backbone - CologneJS, 13.11.2012 - Paul Wittmann
-=============================================================
+Solitaire in Backbone - CologneJS, 13.11.2012 - Paul Kögel
+==========================================================
 
-* [paul@railslove.com](mailto:paul@railslove.com)
-* [http://www.railslove.com/team/paul_wittmann](http://railslove.com/paul_wittmann)
 * [@wakkahari](http://twitter.com/wakkahari)
 
 Slides
 ------
-[http://paulwittmann.github.com/colognejs-talk-2012-11/](http://paulwittmann.github.com/colognejs-talk-2012-11)<br>
-source: [https://github.com/paulwittmann/colognejs-talk-2012-11](https://github.com/paulwittmann/colognejs-talk-2012-11)
+[http://paulkoegel.github.io/colognejs-talk-2012-11/](http://paulkoegel.github.io/colognejs-talk-2012-11/#/)<br>
+source: [https://github.com/paulkoegel/colognejs-talk-2012-11](https://github.com/paulkoegel/colognejs-talk-2012-11)
 
 
 Links from the Slides
 ---------------------
 * Irmingard: [http://irmingard.herokuapp.com](http://irmingard.herokuapp.com)<br>
-  code: [https://github.com/paulwittmann/irmingard-backbone](https://github.com/paulwittmann/irmingard-backbone)
+  code: [https://github.com/paulkoegel/irmingard-backbone](https://github.com/paulkoegel/irmingard-backbone)
 
 * Simple Backbone Dummy App with Model-View syncing: [http://backbone-dummy.herokuapp.com](http://backbone-dummy.herokuapp.com)<br>
-  code: [https://github.com/paulwittmann/backbone-dummy](https://github.com/paulwittmann/backbone-dummy)
+  code: [https://github.com/paulkoegel/backbone-dummy](https://github.com/paulkoegel/backbone-dummy)
 
 * [HTML5 Drag and Drop tutorial](http://www.html5rocks.com/en/tutorials/dnd/basics)
 * [DOMNodeInserted Hack](http://davidwalsh.name/detect-node-insertion)<br>
